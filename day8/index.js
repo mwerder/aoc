@@ -3,7 +3,7 @@ const fs = require('fs');
 const input = fs.readFileSync('./input.txt', 'utf-8')
 	.trim()
 	.split('\n');
-// DAY 7
+// DAY 8
 
 console.log('input:', input);
 
