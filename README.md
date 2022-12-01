@@ -1,4 +1,4 @@
-# aoc_2021
-Advent Of Code 2021
+# aoc
+Advent Of Code
 
 https://adventofcode.com/
