@@ -45,17 +45,10 @@ console.log('Result part1:', sum);
 const groups: string[][] = [];
 let i = 0;
 
-input.forEach((line: string, idx: number) => {
+for (let i = 0; i < input.length; i+=3) {
 
-	if (!groups[i]) {
-		groups[i] = [line];
-	}
-	else if (groups[i].length < 3) {
-		groups[i].push(line);
-	} else {
-		groups[++i] = [line];
-	}
-})
+	groups.push([input[i], input[i + 1], input[i + 2]]);
+}
 
 const badges: string[] = [];
 groups.forEach((group: string[]) => {
@@ -72,4 +65,4 @@ groups.forEach((group: string[]) => {
 });
 
 const sum2 = getPriorities(badges);
-console.log('Result part 2', sum2);
+console.log('Result part2:', sum2);
