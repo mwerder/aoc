@@ -58,29 +58,14 @@ let input2 = i2.filter((line: string) => line !== '');
 input2.push('[[2]]');
 input2.push('[[6]]');
 
-const bubbleOnce = (input2: string[]) => {
-	let hasBubbled = false;
-	for (let i = 0; i < input2.length - 1; i++) {
-		const left = JSON.parse(input2[i]);
-		const right = JSON.parse(input2[i+1]);
-		
-		if (!isOrderCorrect(left, right)) {
-			//swap positions
-			const temp = input2[i];
-			input2[i] = input2[i+1];
-			input2[i+1] = temp;
-			hasBubbled = true;
-		}
-	}
-	return hasBubbled;
-}
-
-// bubble sort
-let hasBubbled = false;
-do {
-	hasBubbled = bubbleOnce(input2);
-} while (hasBubbled)
-
+// sort list
+input2.sort((a,b) => {
+	const left = JSON.parse(a);
+	const right = JSON.parse(b);
+	if (isOrderCorrect(left, right)) return -1;
+	if (isOrderCorrect(right, left)) return 1;
+	return 0;
+})
 
 // find indexes
 const idx = input2.findIndex(el => el === '[[6]]');
