@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const input = fs.readFileSync('./input.txt', 'utf-8').trim().split('\n');
+const input = fs.readFileSync('./data/day01.txt', 'utf-8').trim().split('\n');
 
 // part 1
 // find the calibration values
@@ -45,4 +45,4 @@ const isDigit = (character: string) => {
 
 const nums = input.map((line) => findMatches(line));
 const sum2 = nums.reduce((a, b) => a + parseInt(b[0] + b[b.length - 1]), 0);
-console.log('result part2', sum2);
+console.log('result part2: ', sum2);
